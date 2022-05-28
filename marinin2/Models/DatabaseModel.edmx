@@ -1,0 +1,1804 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accumulator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ManufacturerId" Type="int" Nullable="false" />
+          <Property Name="VoltageId" Type="int" Nullable="false" />
+          <Property Name="BatteryCapacityId" Type="int" Nullable="false" />
+          <Property Name="AccumulatorLengthId" Type="int" Nullable="false" />
+          <Property Name="AccumulatorWidthId" Type="int" Nullable="false" />
+          <Property Name="AccumulatorHeightId" Type="int" Nullable="false" />
+          <Property Name="AccumulatorSeriesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccumulatorHeight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Height" Type="int" />
+        </EntityType>
+        <EntityType Name="AccumulatorLength">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Length" Type="int" />
+        </EntityType>
+        <EntityType Name="AccumulatorManufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="AccumulatorSeries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Series" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AccumulatorWidth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Width" Type="int" />
+        </EntityType>
+        <EntityType Name="ACEA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+        </EntityType>
+        <EntityType Name="API">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="BatteryCapacity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Capacity" Type="int" />
+        </EntityType>
+        <EntityType Name="Composition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+        </EntityType>
+        <EntityType Name="DepartureET">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ET" Type="int" />
+        </EntityType>
+        <EntityType Name="DiameterOfTheCenteralHole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Diameter" Type="int" />
+        </EntityType>
+        <EntityType Name="Disks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisksWidthId" Type="int" Nullable="false" />
+          <Property Name="DisksDiameterId" Type="int" Nullable="false" />
+          <Property Name="DiameterOfTheCenteralHoleId" Type="int" Nullable="false" />
+          <Property Name="DepartureET_Id" Type="int" Nullable="false" />
+          <Property Name="NumberOfMountingHolesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DisksDiameter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Diameter" Type="int" />
+        </EntityType>
+        <EntityType Name="DisksWidth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Width" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LoadIndex">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Load" Type="int" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NumberOfMountingHoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="int" />
+        </EntityType>
+        <EntityType Name="OEM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Oil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OilTypeId" Type="int" Nullable="false" />
+          <Property Name="ManufacturerId" Type="int" Nullable="false" />
+          <Property Name="ViscosityId" Type="int" Nullable="false" />
+          <Property Name="CompositionId" Type="int" Nullable="false" />
+          <Property Name="ACEA_Id" Type="int" Nullable="false" />
+          <Property Name="API_Id" Type="int" Nullable="false" />
+          <Property Name="OEM_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OilType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SpeedIndex">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Speed" Type="int" />
+        </EntityType>
+        <EntityType Name="Tires">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TiresRadiusId" Type="int" Nullable="false" />
+          <Property Name="TiresDiameterId" Type="int" Nullable="false" />
+          <Property Name="LoadIndexId" Type="int" Nullable="false" />
+          <Property Name="SpeedIndexId" Type="int" Nullable="false" />
+          <Property Name="TiresWidthId" Type="int" Nullable="false" />
+          <Property Name="TiresHeightId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiresDiameter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Diameter" Type="int" />
+        </EntityType>
+        <EntityType Name="TiresHeight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Height" Type="int" />
+        </EntityType>
+        <EntityType Name="TiresRadius">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Radius" Type="int" />
+        </EntityType>
+        <EntityType Name="TiresWidth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Width" Type="int" />
+        </EntityType>
+        <EntityType Name="Viscosity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Voltage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Voltage" Type="int" />
+        </EntityType>
+        <Association Name="FK__Accumulat__Accum__52593CB8">
+          <End Role="AccumulatorLength" Type="Self.AccumulatorLength" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorLength">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorLengthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Accum__534D60F1">
+          <End Role="AccumulatorWidth" Type="Self.AccumulatorWidth" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorWidth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorWidthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Accum__5441852A">
+          <End Role="AccumulatorHeight" Type="Self.AccumulatorHeight" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorHeight">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorHeightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Accum__5535A963">
+          <End Role="AccumulatorSeries" Type="Self.AccumulatorSeries" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorSeries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorSeriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Batte__5165187F">
+          <End Role="BatteryCapacity" Type="Self.BatteryCapacity" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BatteryCapacity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="BatteryCapacityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Manuf__4F7CD00D">
+          <End Role="AccumulatorManufacturer" Type="Self.AccumulatorManufacturer" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorManufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Volta__5070F446">
+          <End Role="Voltage" Type="Self.Voltage" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voltage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="VoltageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Admins__Employee__29572725">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customers__Emplo__267ABA7A">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__Departure__778AC167">
+          <End Role="DepartureET" Type="Self.DepartureET" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartureET">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DepartureET_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__DiameterO__76969D2E">
+          <End Role="DiameterOfTheCenteralHole" Type="Self.DiameterOfTheCenteralHole" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiameterOfTheCenteralHole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DiameterOfTheCenteralHoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__DisksDiam__75A278F5">
+          <End Role="DisksDiameter" Type="Self.DisksDiameter" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DisksDiameter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DisksDiameterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__DisksWidt__74AE54BC">
+          <End Role="DisksWidth" Type="Self.DisksWidth" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DisksWidth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DisksWidthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__NumberOfM__787EE5A0">
+          <End Role="NumberOfMountingHoles" Type="Self.NumberOfMountingHoles" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NumberOfMountingHoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="NumberOfMountingHolesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__ACEA_Id__3D5E1FD2">
+          <End Role="ACEA" Type="Self.ACEA" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACEA">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="ACEA_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__API_Id__3E52440B">
+          <End Role="API" Type="Self.API" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="API">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="API_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__Composition__3C69FB99">
+          <End Role="Composition" Type="Self.Composition" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Composition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="CompositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__Manufacture__3A81B327">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__OEM_Id__3F466844">
+          <End Role="OEM" Type="Self.OEM" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OEM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="OEM_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__OilTypeId__398D8EEE">
+          <End Role="OilType" Type="Self.OilType" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OilType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="OilTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__ViscosityId__3B75D760">
+          <End Role="Viscosity" Type="Self.Viscosity" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Viscosity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="ViscosityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__LoadIndex__656C112C">
+          <End Role="LoadIndex" Type="Self.LoadIndex" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tires" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadIndex">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="LoadIndexId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__SpeedInde__66603565">
+          <End Role="SpeedIndex" Type="Self.SpeedIndex" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tires" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpeedIndex">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="SpeedIndexId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresDiam__6477ECF3">
+          <End Role="TiresDiameter" Type="Self.TiresDiameter" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tires" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresDiameter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresDiameterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresHeig__68487DD7">
+          <End Role="TiresHeight" Type="Self.TiresHeight" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tires" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresHeight">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresHeightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresRadi__6383C8BA">
+          <End Role="TiresRadius" Type="Self.TiresRadius" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tires" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresRadius">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresRadiusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresWidt__6754599E">
+          <End Role="TiresWidth" Type="Self.TiresWidth" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tires" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresWidth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresWidthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="Accumulator" EntityType="Self.Accumulator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccumulatorHeight" EntityType="Self.AccumulatorHeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccumulatorLength" EntityType="Self.AccumulatorLength" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccumulatorManufacturer" EntityType="Self.AccumulatorManufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccumulatorSeries" EntityType="Self.AccumulatorSeries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccumulatorWidth" EntityType="Self.AccumulatorWidth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACEA" EntityType="Self.ACEA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="API" EntityType="Self.API" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BatteryCapacity" EntityType="Self.BatteryCapacity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Composition" EntityType="Self.Composition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartureET" EntityType="Self.DepartureET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DiameterOfTheCenteralHole" EntityType="Self.DiameterOfTheCenteralHole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Disks" EntityType="Self.Disks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DisksDiameter" EntityType="Self.DisksDiameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DisksWidth" EntityType="Self.DisksWidth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoadIndex" EntityType="Self.LoadIndex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NumberOfMountingHoles" EntityType="Self.NumberOfMountingHoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OEM" EntityType="Self.OEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oil" EntityType="Self.Oil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilType" EntityType="Self.OilType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SpeedIndex" EntityType="Self.SpeedIndex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tires" EntityType="Self.Tires" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiresDiameter" EntityType="Self.TiresDiameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiresHeight" EntityType="Self.TiresHeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiresRadius" EntityType="Self.TiresRadius" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiresWidth" EntityType="Self.TiresWidth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Viscosity" EntityType="Self.Viscosity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Voltage" EntityType="Self.Voltage" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Accumulat__Accum__52593CB8" Association="Self.FK__Accumulat__Accum__52593CB8">
+            <End Role="AccumulatorLength" EntitySet="AccumulatorLength" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Accum__534D60F1" Association="Self.FK__Accumulat__Accum__534D60F1">
+            <End Role="AccumulatorWidth" EntitySet="AccumulatorWidth" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Accum__5441852A" Association="Self.FK__Accumulat__Accum__5441852A">
+            <End Role="AccumulatorHeight" EntitySet="AccumulatorHeight" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Accum__5535A963" Association="Self.FK__Accumulat__Accum__5535A963">
+            <End Role="AccumulatorSeries" EntitySet="AccumulatorSeries" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Batte__5165187F" Association="Self.FK__Accumulat__Batte__5165187F">
+            <End Role="BatteryCapacity" EntitySet="BatteryCapacity" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Manuf__4F7CD00D" Association="Self.FK__Accumulat__Manuf__4F7CD00D">
+            <End Role="AccumulatorManufacturer" EntitySet="AccumulatorManufacturer" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Volta__5070F446" Association="Self.FK__Accumulat__Volta__5070F446">
+            <End Role="Voltage" EntitySet="Voltage" />
+            <End Role="Accumulator" EntitySet="Accumulator" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Admins__Employee__29572725" Association="Self.FK__Admins__Employee__29572725">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customers__Emplo__267ABA7A" Association="Self.FK__Customers__Emplo__267ABA7A">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__Departure__778AC167" Association="Self.FK__Disks__Departure__778AC167">
+            <End Role="DepartureET" EntitySet="DepartureET" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__DiameterO__76969D2E" Association="Self.FK__Disks__DiameterO__76969D2E">
+            <End Role="DiameterOfTheCenteralHole" EntitySet="DiameterOfTheCenteralHole" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__DisksDiam__75A278F5" Association="Self.FK__Disks__DisksDiam__75A278F5">
+            <End Role="DisksDiameter" EntitySet="DisksDiameter" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__DisksWidt__74AE54BC" Association="Self.FK__Disks__DisksWidt__74AE54BC">
+            <End Role="DisksWidth" EntitySet="DisksWidth" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__NumberOfM__787EE5A0" Association="Self.FK__Disks__NumberOfM__787EE5A0">
+            <End Role="NumberOfMountingHoles" EntitySet="NumberOfMountingHoles" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__ACEA_Id__3D5E1FD2" Association="Self.FK__Oil__ACEA_Id__3D5E1FD2">
+            <End Role="ACEA" EntitySet="ACEA" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__API_Id__3E52440B" Association="Self.FK__Oil__API_Id__3E52440B">
+            <End Role="API" EntitySet="API" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__Composition__3C69FB99" Association="Self.FK__Oil__Composition__3C69FB99">
+            <End Role="Composition" EntitySet="Composition" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__Manufacture__3A81B327" Association="Self.FK__Oil__Manufacture__3A81B327">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__OEM_Id__3F466844" Association="Self.FK__Oil__OEM_Id__3F466844">
+            <End Role="OEM" EntitySet="OEM" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__OilTypeId__398D8EEE" Association="Self.FK__Oil__OilTypeId__398D8EEE">
+            <End Role="OilType" EntitySet="OilType" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__ViscosityId__3B75D760" Association="Self.FK__Oil__ViscosityId__3B75D760">
+            <End Role="Viscosity" EntitySet="Viscosity" />
+            <End Role="Oil" EntitySet="Oil" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__LoadIndex__656C112C" Association="Self.FK__Tires__LoadIndex__656C112C">
+            <End Role="LoadIndex" EntitySet="LoadIndex" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__SpeedInde__66603565" Association="Self.FK__Tires__SpeedInde__66603565">
+            <End Role="SpeedIndex" EntitySet="SpeedIndex" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresDiam__6477ECF3" Association="Self.FK__Tires__TiresDiam__6477ECF3">
+            <End Role="TiresDiameter" EntitySet="TiresDiameter" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresHeig__68487DD7" Association="Self.FK__Tires__TiresHeig__68487DD7">
+            <End Role="TiresHeight" EntitySet="TiresHeight" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresRadi__6383C8BA" Association="Self.FK__Tires__TiresRadi__6383C8BA">
+            <End Role="TiresRadius" EntitySet="TiresRadius" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresWidt__6754599E" Association="Self.FK__Tires__TiresWidt__6754599E">
+            <End Role="TiresWidth" EntitySet="TiresWidth" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accumulator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManufacturerId" Type="Int32" Nullable="false" />
+          <Property Name="VoltageId" Type="Int32" Nullable="false" />
+          <Property Name="BatteryCapacityId" Type="Int32" Nullable="false" />
+          <Property Name="AccumulatorLengthId" Type="Int32" Nullable="false" />
+          <Property Name="AccumulatorWidthId" Type="Int32" Nullable="false" />
+          <Property Name="AccumulatorHeightId" Type="Int32" Nullable="false" />
+          <Property Name="AccumulatorSeriesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AccumulatorLength" Relationship="Self.FK__Accumulat__Accum__52593CB8" FromRole="Accumulator" ToRole="AccumulatorLength" />
+          <NavigationProperty Name="AccumulatorWidth" Relationship="Self.FK__Accumulat__Accum__534D60F1" FromRole="Accumulator" ToRole="AccumulatorWidth" />
+          <NavigationProperty Name="AccumulatorHeight" Relationship="Self.FK__Accumulat__Accum__5441852A" FromRole="Accumulator" ToRole="AccumulatorHeight" />
+          <NavigationProperty Name="AccumulatorSery" Relationship="Self.FK__Accumulat__Accum__5535A963" FromRole="Accumulator" ToRole="AccumulatorSeries" />
+          <NavigationProperty Name="BatteryCapacity" Relationship="Self.FK__Accumulat__Batte__5165187F" FromRole="Accumulator" ToRole="BatteryCapacity" />
+          <NavigationProperty Name="AccumulatorManufacturer" Relationship="Self.FK__Accumulat__Manuf__4F7CD00D" FromRole="Accumulator" ToRole="AccumulatorManufacturer" />
+          <NavigationProperty Name="Voltage" Relationship="Self.FK__Accumulat__Volta__5070F446" FromRole="Accumulator" ToRole="Voltage" />
+        </EntityType>
+        <EntityType Name="AccumulatorHeight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Height" Type="Int32" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Accum__5441852A" FromRole="AccumulatorHeight" ToRole="Accumulator" />
+        </EntityType>
+        <EntityType Name="AccumulatorLength">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Length" Type="Int32" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Accum__52593CB8" FromRole="AccumulatorLength" ToRole="Accumulator" />
+        </EntityType>
+        <EntityType Name="AccumulatorManufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Manufacturer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Manuf__4F7CD00D" FromRole="AccumulatorManufacturer" ToRole="Accumulator" />
+        </EntityType>
+        <EntityType Name="AccumulatorSery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Accum__5535A963" FromRole="AccumulatorSeries" ToRole="Accumulator" />
+        </EntityType>
+        <EntityType Name="AccumulatorWidth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Width" Type="Int32" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Accum__534D60F1" FromRole="AccumulatorWidth" ToRole="Accumulator" />
+        </EntityType>
+        <EntityType Name="ACEA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__ACEA_Id__3D5E1FD2" FromRole="ACEA" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Admins__Employee__29572725" FromRole="Admins" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="API">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__API_Id__3E52440B" FromRole="API" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="BatteryCapacity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Capacity" Type="Int32" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Batte__5165187F" FromRole="BatteryCapacity" ToRole="Accumulator" />
+        </EntityType>
+        <EntityType Name="Composition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__Composition__3C69FB99" FromRole="Composition" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Customers__Emplo__267ABA7A" FromRole="Customers" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="DepartureET">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ET" Type="Int32" />
+          <NavigationProperty Name="Disks" Relationship="Self.FK__Disks__Departure__778AC167" FromRole="DepartureET" ToRole="Disks" />
+        </EntityType>
+        <EntityType Name="DiameterOfTheCenteralHole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Diameter" Type="Int32" />
+          <NavigationProperty Name="Disks" Relationship="Self.FK__Disks__DiameterO__76969D2E" FromRole="DiameterOfTheCenteralHole" ToRole="Disks" />
+        </EntityType>
+        <EntityType Name="Disk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisksWidthId" Type="Int32" Nullable="false" />
+          <Property Name="DisksDiameterId" Type="Int32" Nullable="false" />
+          <Property Name="DiameterOfTheCenteralHoleId" Type="Int32" Nullable="false" />
+          <Property Name="DepartureET_Id" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfMountingHolesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DepartureET" Relationship="Self.FK__Disks__Departure__778AC167" FromRole="Disks" ToRole="DepartureET" />
+          <NavigationProperty Name="DiameterOfTheCenteralHole" Relationship="Self.FK__Disks__DiameterO__76969D2E" FromRole="Disks" ToRole="DiameterOfTheCenteralHole" />
+          <NavigationProperty Name="DisksDiameter" Relationship="Self.FK__Disks__DisksDiam__75A278F5" FromRole="Disks" ToRole="DisksDiameter" />
+          <NavigationProperty Name="DisksWidth" Relationship="Self.FK__Disks__DisksWidt__74AE54BC" FromRole="Disks" ToRole="DisksWidth" />
+          <NavigationProperty Name="NumberOfMountingHole" Relationship="Self.FK__Disks__NumberOfM__787EE5A0" FromRole="Disks" ToRole="NumberOfMountingHoles" />
+        </EntityType>
+        <EntityType Name="DisksDiameter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Diameter" Type="Int32" />
+          <NavigationProperty Name="Disks" Relationship="Self.FK__Disks__DisksDiam__75A278F5" FromRole="DisksDiameter" ToRole="Disks" />
+        </EntityType>
+        <EntityType Name="DisksWidth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Width" Type="Int32" />
+          <NavigationProperty Name="Disks" Relationship="Self.FK__Disks__DisksWidt__74AE54BC" FromRole="DisksWidth" ToRole="Disks" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admins" Relationship="Self.FK__Admins__Employee__29572725" FromRole="Employee" ToRole="Admins" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Customers__Emplo__267ABA7A" FromRole="Employee" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="LoadIndex">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Load" Type="Int32" />
+          <NavigationProperty Name="Tires" Relationship="Self.FK__Tires__LoadIndex__656C112C" FromRole="LoadIndex" ToRole="Tires" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__Manufacture__3A81B327" FromRole="Manufacturer" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="NumberOfMountingHole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int32" />
+          <NavigationProperty Name="Disks" Relationship="Self.FK__Disks__NumberOfM__787EE5A0" FromRole="NumberOfMountingHoles" ToRole="Disks" />
+        </EntityType>
+        <EntityType Name="OEM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__OEM_Id__3F466844" FromRole="OEM" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="Oil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OilTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ManufacturerId" Type="Int32" Nullable="false" />
+          <Property Name="ViscosityId" Type="Int32" Nullable="false" />
+          <Property Name="CompositionId" Type="Int32" Nullable="false" />
+          <Property Name="ACEA_Id" Type="Int32" Nullable="false" />
+          <Property Name="API_Id" Type="Int32" Nullable="false" />
+          <Property Name="OEM_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ACEA" Relationship="Self.FK__Oil__ACEA_Id__3D5E1FD2" FromRole="Oil" ToRole="ACEA" />
+          <NavigationProperty Name="API" Relationship="Self.FK__Oil__API_Id__3E52440B" FromRole="Oil" ToRole="API" />
+          <NavigationProperty Name="Composition" Relationship="Self.FK__Oil__Composition__3C69FB99" FromRole="Oil" ToRole="Composition" />
+          <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Oil__Manufacture__3A81B327" FromRole="Oil" ToRole="Manufacturer" />
+          <NavigationProperty Name="OEM" Relationship="Self.FK__Oil__OEM_Id__3F466844" FromRole="Oil" ToRole="OEM" />
+          <NavigationProperty Name="OilType" Relationship="Self.FK__Oil__OilTypeId__398D8EEE" FromRole="Oil" ToRole="OilType" />
+          <NavigationProperty Name="Viscosity" Relationship="Self.FK__Oil__ViscosityId__3B75D760" FromRole="Oil" ToRole="Viscosity" />
+        </EntityType>
+        <EntityType Name="OilType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__OilTypeId__398D8EEE" FromRole="OilType" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="SpeedIndex">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Speed" Type="Int32" />
+          <NavigationProperty Name="Tires" Relationship="Self.FK__Tires__SpeedInde__66603565" FromRole="SpeedIndex" ToRole="Tires" />
+        </EntityType>
+        <EntityType Name="Tire">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TiresRadiusId" Type="Int32" Nullable="false" />
+          <Property Name="TiresDiameterId" Type="Int32" Nullable="false" />
+          <Property Name="LoadIndexId" Type="Int32" Nullable="false" />
+          <Property Name="SpeedIndexId" Type="Int32" Nullable="false" />
+          <Property Name="TiresWidthId" Type="Int32" Nullable="false" />
+          <Property Name="TiresHeightId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LoadIndex" Relationship="Self.FK__Tires__LoadIndex__656C112C" FromRole="Tires" ToRole="LoadIndex" />
+          <NavigationProperty Name="SpeedIndex" Relationship="Self.FK__Tires__SpeedInde__66603565" FromRole="Tires" ToRole="SpeedIndex" />
+          <NavigationProperty Name="TiresDiameter" Relationship="Self.FK__Tires__TiresDiam__6477ECF3" FromRole="Tires" ToRole="TiresDiameter" />
+          <NavigationProperty Name="TiresHeight" Relationship="Self.FK__Tires__TiresHeig__68487DD7" FromRole="Tires" ToRole="TiresHeight" />
+          <NavigationProperty Name="TiresRadiu" Relationship="Self.FK__Tires__TiresRadi__6383C8BA" FromRole="Tires" ToRole="TiresRadius" />
+          <NavigationProperty Name="TiresWidth" Relationship="Self.FK__Tires__TiresWidt__6754599E" FromRole="Tires" ToRole="TiresWidth" />
+        </EntityType>
+        <EntityType Name="TiresDiameter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Diameter" Type="Int32" />
+          <NavigationProperty Name="Tires" Relationship="Self.FK__Tires__TiresDiam__6477ECF3" FromRole="TiresDiameter" ToRole="Tires" />
+        </EntityType>
+        <EntityType Name="TiresHeight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Height" Type="Int32" />
+          <NavigationProperty Name="Tires" Relationship="Self.FK__Tires__TiresHeig__68487DD7" FromRole="TiresHeight" ToRole="Tires" />
+        </EntityType>
+        <EntityType Name="TiresRadiu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Radius" Type="Int32" />
+          <NavigationProperty Name="Tires" Relationship="Self.FK__Tires__TiresRadi__6383C8BA" FromRole="TiresRadius" ToRole="Tires" />
+        </EntityType>
+        <EntityType Name="TiresWidth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Width" Type="Int32" />
+          <NavigationProperty Name="Tires" Relationship="Self.FK__Tires__TiresWidt__6754599E" FromRole="TiresWidth" ToRole="Tires" />
+        </EntityType>
+        <EntityType Name="Viscosity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="Self.FK__Oil__ViscosityId__3B75D760" FromRole="Viscosity" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="Voltage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Voltage1" Type="Int32" />
+          <NavigationProperty Name="Accumulators" Relationship="Self.FK__Accumulat__Volta__5070F446" FromRole="Voltage" ToRole="Accumulator" />
+        </EntityType>
+        <Association Name="FK__Accumulat__Accum__52593CB8">
+          <End Role="AccumulatorLength" Type="Self.AccumulatorLength" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorLength">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorLengthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Accum__534D60F1">
+          <End Role="AccumulatorWidth" Type="Self.AccumulatorWidth" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorWidth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorWidthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Accum__5441852A">
+          <End Role="AccumulatorHeight" Type="Self.AccumulatorHeight" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorHeight">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorHeightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Accum__5535A963">
+          <End Role="AccumulatorSeries" Type="Self.AccumulatorSery" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorSeries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="AccumulatorSeriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Batte__5165187F">
+          <End Role="BatteryCapacity" Type="Self.BatteryCapacity" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BatteryCapacity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="BatteryCapacityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Manuf__4F7CD00D">
+          <End Role="AccumulatorManufacturer" Type="Self.AccumulatorManufacturer" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccumulatorManufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Accumulat__Volta__5070F446">
+          <End Role="Voltage" Type="Self.Voltage" Multiplicity="1" />
+          <End Role="Accumulator" Type="Self.Accumulator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voltage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accumulator">
+              <PropertyRef Name="VoltageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__ACEA_Id__3D5E1FD2">
+          <End Role="ACEA" Type="Self.ACEA" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACEA">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="ACEA_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Admins__Employee__29572725">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__API_Id__3E52440B">
+          <End Role="API" Type="Self.API" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="API">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="API_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__Composition__3C69FB99">
+          <End Role="Composition" Type="Self.Composition" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Composition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="CompositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customers__Emplo__267ABA7A">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__Departure__778AC167">
+          <End Role="DepartureET" Type="Self.DepartureET" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartureET">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DepartureET_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__DiameterO__76969D2E">
+          <End Role="DiameterOfTheCenteralHole" Type="Self.DiameterOfTheCenteralHole" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiameterOfTheCenteralHole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DiameterOfTheCenteralHoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__DisksDiam__75A278F5">
+          <End Role="DisksDiameter" Type="Self.DisksDiameter" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DisksDiameter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DisksDiameterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__DisksWidt__74AE54BC">
+          <End Role="DisksWidth" Type="Self.DisksWidth" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DisksWidth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="DisksWidthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Disks__NumberOfM__787EE5A0">
+          <End Role="NumberOfMountingHoles" Type="Self.NumberOfMountingHole" Multiplicity="1" />
+          <End Role="Disks" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NumberOfMountingHoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Disks">
+              <PropertyRef Name="NumberOfMountingHolesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__LoadIndex__656C112C">
+          <End Role="LoadIndex" Type="Self.LoadIndex" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoadIndex">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="LoadIndexId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__Manufacture__3A81B327">
+          <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__OEM_Id__3F466844">
+          <End Role="OEM" Type="Self.OEM" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OEM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="OEM_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__OilTypeId__398D8EEE">
+          <End Role="OilType" Type="Self.OilType" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OilType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="OilTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Oil__ViscosityId__3B75D760">
+          <End Role="Viscosity" Type="Self.Viscosity" Multiplicity="1" />
+          <End Role="Oil" Type="Self.Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Viscosity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="ViscosityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__SpeedInde__66603565">
+          <End Role="SpeedIndex" Type="Self.SpeedIndex" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpeedIndex">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="SpeedIndexId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresDiam__6477ECF3">
+          <End Role="TiresDiameter" Type="Self.TiresDiameter" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresDiameter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresDiameterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresHeig__68487DD7">
+          <End Role="TiresHeight" Type="Self.TiresHeight" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresHeight">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresHeightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresRadi__6383C8BA">
+          <End Role="TiresRadius" Type="Self.TiresRadiu" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresRadius">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresRadiusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tires__TiresWidt__6754599E">
+          <End Role="TiresWidth" Type="Self.TiresWidth" Multiplicity="1" />
+          <End Role="Tires" Type="Self.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiresWidth">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tires">
+              <PropertyRef Name="TiresWidthId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accumulators" EntityType="Self.Accumulator" />
+          <EntitySet Name="AccumulatorHeights" EntityType="Self.AccumulatorHeight" />
+          <EntitySet Name="AccumulatorLengths" EntityType="Self.AccumulatorLength" />
+          <EntitySet Name="AccumulatorManufacturers" EntityType="Self.AccumulatorManufacturer" />
+          <EntitySet Name="AccumulatorSeries" EntityType="Self.AccumulatorSery" />
+          <EntitySet Name="AccumulatorWidths" EntityType="Self.AccumulatorWidth" />
+          <EntitySet Name="ACEAs" EntityType="Self.ACEA" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="APIs" EntityType="Self.API" />
+          <EntitySet Name="BatteryCapacities" EntityType="Self.BatteryCapacity" />
+          <EntitySet Name="Compositions" EntityType="Self.Composition" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="DepartureETs" EntityType="Self.DepartureET" />
+          <EntitySet Name="DiameterOfTheCenteralHoles" EntityType="Self.DiameterOfTheCenteralHole" />
+          <EntitySet Name="Disks" EntityType="Self.Disk" />
+          <EntitySet Name="DisksDiameters" EntityType="Self.DisksDiameter" />
+          <EntitySet Name="DisksWidths" EntityType="Self.DisksWidth" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="LoadIndexes" EntityType="Self.LoadIndex" />
+          <EntitySet Name="Manufacturers" EntityType="Self.Manufacturer" />
+          <EntitySet Name="NumberOfMountingHoles" EntityType="Self.NumberOfMountingHole" />
+          <EntitySet Name="OEMs" EntityType="Self.OEM" />
+          <EntitySet Name="Oils" EntityType="Self.Oil" />
+          <EntitySet Name="OilTypes" EntityType="Self.OilType" />
+          <EntitySet Name="SpeedIndexes" EntityType="Self.SpeedIndex" />
+          <EntitySet Name="Tires" EntityType="Self.Tire" />
+          <EntitySet Name="TiresDiameters" EntityType="Self.TiresDiameter" />
+          <EntitySet Name="TiresHeights" EntityType="Self.TiresHeight" />
+          <EntitySet Name="TiresRadius" EntityType="Self.TiresRadiu" />
+          <EntitySet Name="TiresWidths" EntityType="Self.TiresWidth" />
+          <EntitySet Name="Viscosities" EntityType="Self.Viscosity" />
+          <EntitySet Name="Voltages" EntityType="Self.Voltage" />
+          <AssociationSet Name="FK__Accumulat__Accum__52593CB8" Association="Self.FK__Accumulat__Accum__52593CB8">
+            <End Role="AccumulatorLength" EntitySet="AccumulatorLengths" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Accum__534D60F1" Association="Self.FK__Accumulat__Accum__534D60F1">
+            <End Role="AccumulatorWidth" EntitySet="AccumulatorWidths" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Accum__5441852A" Association="Self.FK__Accumulat__Accum__5441852A">
+            <End Role="AccumulatorHeight" EntitySet="AccumulatorHeights" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Accum__5535A963" Association="Self.FK__Accumulat__Accum__5535A963">
+            <End Role="AccumulatorSeries" EntitySet="AccumulatorSeries" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Batte__5165187F" Association="Self.FK__Accumulat__Batte__5165187F">
+            <End Role="BatteryCapacity" EntitySet="BatteryCapacities" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Manuf__4F7CD00D" Association="Self.FK__Accumulat__Manuf__4F7CD00D">
+            <End Role="AccumulatorManufacturer" EntitySet="AccumulatorManufacturers" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Accumulat__Volta__5070F446" Association="Self.FK__Accumulat__Volta__5070F446">
+            <End Role="Voltage" EntitySet="Voltages" />
+            <End Role="Accumulator" EntitySet="Accumulators" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__ACEA_Id__3D5E1FD2" Association="Self.FK__Oil__ACEA_Id__3D5E1FD2">
+            <End Role="ACEA" EntitySet="ACEAs" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Admins__Employee__29572725" Association="Self.FK__Admins__Employee__29572725">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__API_Id__3E52440B" Association="Self.FK__Oil__API_Id__3E52440B">
+            <End Role="API" EntitySet="APIs" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__Composition__3C69FB99" Association="Self.FK__Oil__Composition__3C69FB99">
+            <End Role="Composition" EntitySet="Compositions" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customers__Emplo__267ABA7A" Association="Self.FK__Customers__Emplo__267ABA7A">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__Departure__778AC167" Association="Self.FK__Disks__Departure__778AC167">
+            <End Role="DepartureET" EntitySet="DepartureETs" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__DiameterO__76969D2E" Association="Self.FK__Disks__DiameterO__76969D2E">
+            <End Role="DiameterOfTheCenteralHole" EntitySet="DiameterOfTheCenteralHoles" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__DisksDiam__75A278F5" Association="Self.FK__Disks__DisksDiam__75A278F5">
+            <End Role="DisksDiameter" EntitySet="DisksDiameters" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__DisksWidt__74AE54BC" Association="Self.FK__Disks__DisksWidt__74AE54BC">
+            <End Role="DisksWidth" EntitySet="DisksWidths" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Disks__NumberOfM__787EE5A0" Association="Self.FK__Disks__NumberOfM__787EE5A0">
+            <End Role="NumberOfMountingHoles" EntitySet="NumberOfMountingHoles" />
+            <End Role="Disks" EntitySet="Disks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__LoadIndex__656C112C" Association="Self.FK__Tires__LoadIndex__656C112C">
+            <End Role="LoadIndex" EntitySet="LoadIndexes" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__Manufacture__3A81B327" Association="Self.FK__Oil__Manufacture__3A81B327">
+            <End Role="Manufacturer" EntitySet="Manufacturers" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__OEM_Id__3F466844" Association="Self.FK__Oil__OEM_Id__3F466844">
+            <End Role="OEM" EntitySet="OEMs" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__OilTypeId__398D8EEE" Association="Self.FK__Oil__OilTypeId__398D8EEE">
+            <End Role="OilType" EntitySet="OilTypes" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Oil__ViscosityId__3B75D760" Association="Self.FK__Oil__ViscosityId__3B75D760">
+            <End Role="Viscosity" EntitySet="Viscosities" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__SpeedInde__66603565" Association="Self.FK__Tires__SpeedInde__66603565">
+            <End Role="SpeedIndex" EntitySet="SpeedIndexes" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresDiam__6477ECF3" Association="Self.FK__Tires__TiresDiam__6477ECF3">
+            <End Role="TiresDiameter" EntitySet="TiresDiameters" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresHeig__68487DD7" Association="Self.FK__Tires__TiresHeig__68487DD7">
+            <End Role="TiresHeight" EntitySet="TiresHeights" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresRadi__6383C8BA" Association="Self.FK__Tires__TiresRadi__6383C8BA">
+            <End Role="TiresRadius" EntitySet="TiresRadius" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tires__TiresWidt__6754599E" Association="Self.FK__Tires__TiresWidt__6754599E">
+            <End Role="TiresWidth" EntitySet="TiresWidths" />
+            <End Role="Tires" EntitySet="Tires" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="Accumulators">
+            <EntityTypeMapping TypeName="DatabaseModel.Accumulator">
+              <MappingFragment StoreEntitySet="Accumulator">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+                <ScalarProperty Name="VoltageId" ColumnName="VoltageId" />
+                <ScalarProperty Name="BatteryCapacityId" ColumnName="BatteryCapacityId" />
+                <ScalarProperty Name="AccumulatorLengthId" ColumnName="AccumulatorLengthId" />
+                <ScalarProperty Name="AccumulatorWidthId" ColumnName="AccumulatorWidthId" />
+                <ScalarProperty Name="AccumulatorHeightId" ColumnName="AccumulatorHeightId" />
+                <ScalarProperty Name="AccumulatorSeriesId" ColumnName="AccumulatorSeriesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccumulatorHeights">
+            <EntityTypeMapping TypeName="DatabaseModel.AccumulatorHeight">
+              <MappingFragment StoreEntitySet="AccumulatorHeight">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccumulatorLengths">
+            <EntityTypeMapping TypeName="DatabaseModel.AccumulatorLength">
+              <MappingFragment StoreEntitySet="AccumulatorLength">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccumulatorManufacturers">
+            <EntityTypeMapping TypeName="DatabaseModel.AccumulatorManufacturer">
+              <MappingFragment StoreEntitySet="AccumulatorManufacturer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccumulatorSeries">
+            <EntityTypeMapping TypeName="DatabaseModel.AccumulatorSery">
+              <MappingFragment StoreEntitySet="AccumulatorSeries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccumulatorWidths">
+            <EntityTypeMapping TypeName="DatabaseModel.AccumulatorWidth">
+              <MappingFragment StoreEntitySet="AccumulatorWidth">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACEAs">
+            <EntityTypeMapping TypeName="DatabaseModel.ACEA">
+              <MappingFragment StoreEntitySet="ACEA">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="DatabaseModel.Admin">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APIs">
+            <EntityTypeMapping TypeName="DatabaseModel.API">
+              <MappingFragment StoreEntitySet="API">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BatteryCapacities">
+            <EntityTypeMapping TypeName="DatabaseModel.BatteryCapacity">
+              <MappingFragment StoreEntitySet="BatteryCapacity">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compositions">
+            <EntityTypeMapping TypeName="DatabaseModel.Composition">
+              <MappingFragment StoreEntitySet="Composition">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="DatabaseModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartureETs">
+            <EntityTypeMapping TypeName="DatabaseModel.DepartureET">
+              <MappingFragment StoreEntitySet="DepartureET">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ET" ColumnName="ET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiameterOfTheCenteralHoles">
+            <EntityTypeMapping TypeName="DatabaseModel.DiameterOfTheCenteralHole">
+              <MappingFragment StoreEntitySet="DiameterOfTheCenteralHole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disks">
+            <EntityTypeMapping TypeName="DatabaseModel.Disk">
+              <MappingFragment StoreEntitySet="Disks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DisksWidthId" ColumnName="DisksWidthId" />
+                <ScalarProperty Name="DisksDiameterId" ColumnName="DisksDiameterId" />
+                <ScalarProperty Name="DiameterOfTheCenteralHoleId" ColumnName="DiameterOfTheCenteralHoleId" />
+                <ScalarProperty Name="DepartureET_Id" ColumnName="DepartureET_Id" />
+                <ScalarProperty Name="NumberOfMountingHolesId" ColumnName="NumberOfMountingHolesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DisksDiameters">
+            <EntityTypeMapping TypeName="DatabaseModel.DisksDiameter">
+              <MappingFragment StoreEntitySet="DisksDiameter">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DisksWidths">
+            <EntityTypeMapping TypeName="DatabaseModel.DisksWidth">
+              <MappingFragment StoreEntitySet="DisksWidth">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="DatabaseModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoadIndexes">
+            <EntityTypeMapping TypeName="DatabaseModel.LoadIndex">
+              <MappingFragment StoreEntitySet="LoadIndex">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Load" ColumnName="Load" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturers">
+            <EntityTypeMapping TypeName="DatabaseModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NumberOfMountingHoles">
+            <EntityTypeMapping TypeName="DatabaseModel.NumberOfMountingHole">
+              <MappingFragment StoreEntitySet="NumberOfMountingHoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OEMs">
+            <EntityTypeMapping TypeName="DatabaseModel.OEM">
+              <MappingFragment StoreEntitySet="OEM">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oils">
+            <EntityTypeMapping TypeName="DatabaseModel.Oil">
+              <MappingFragment StoreEntitySet="Oil">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OilTypeId" ColumnName="OilTypeId" />
+                <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+                <ScalarProperty Name="ViscosityId" ColumnName="ViscosityId" />
+                <ScalarProperty Name="CompositionId" ColumnName="CompositionId" />
+                <ScalarProperty Name="ACEA_Id" ColumnName="ACEA_Id" />
+                <ScalarProperty Name="API_Id" ColumnName="API_Id" />
+                <ScalarProperty Name="OEM_Id" ColumnName="OEM_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilTypes">
+            <EntityTypeMapping TypeName="DatabaseModel.OilType">
+              <MappingFragment StoreEntitySet="OilType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpeedIndexes">
+            <EntityTypeMapping TypeName="DatabaseModel.SpeedIndex">
+              <MappingFragment StoreEntitySet="SpeedIndex">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tires">
+            <EntityTypeMapping TypeName="DatabaseModel.Tire">
+              <MappingFragment StoreEntitySet="Tires">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TiresRadiusId" ColumnName="TiresRadiusId" />
+                <ScalarProperty Name="TiresDiameterId" ColumnName="TiresDiameterId" />
+                <ScalarProperty Name="LoadIndexId" ColumnName="LoadIndexId" />
+                <ScalarProperty Name="SpeedIndexId" ColumnName="SpeedIndexId" />
+                <ScalarProperty Name="TiresWidthId" ColumnName="TiresWidthId" />
+                <ScalarProperty Name="TiresHeightId" ColumnName="TiresHeightId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiresDiameters">
+            <EntityTypeMapping TypeName="DatabaseModel.TiresDiameter">
+              <MappingFragment StoreEntitySet="TiresDiameter">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiresHeights">
+            <EntityTypeMapping TypeName="DatabaseModel.TiresHeight">
+              <MappingFragment StoreEntitySet="TiresHeight">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiresRadius">
+            <EntityTypeMapping TypeName="DatabaseModel.TiresRadiu">
+              <MappingFragment StoreEntitySet="TiresRadius">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Radius" ColumnName="Radius" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiresWidths">
+            <EntityTypeMapping TypeName="DatabaseModel.TiresWidth">
+              <MappingFragment StoreEntitySet="TiresWidth">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Viscosities">
+            <EntityTypeMapping TypeName="DatabaseModel.Viscosity">
+              <MappingFragment StoreEntitySet="Viscosity">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Voltages">
+            <EntityTypeMapping TypeName="DatabaseModel.Voltage">
+              <MappingFragment StoreEntitySet="Voltage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Voltage1" ColumnName="Voltage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

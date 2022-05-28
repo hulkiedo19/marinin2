@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f79d101df1547f6812a52895f5f3db6" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Accumulator" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AccumulatorHeight" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AccumulatorLength" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AccumulatorManufacturer" Width="1.5" PointX="5.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AccumulatorSery" Width="1.5" PointX="5.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.AccumulatorWidth" Width="1.5" PointX="5.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.ACEA" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Admin" Width="1.5" PointX="15" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.API" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.BatteryCapacity" Width="1.5" PointX="5.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Composition" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Customer" Width="1.5" PointX="15" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.DepartureET" Width="1.5" PointX="10.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.DiameterOfTheCenteralHole" Width="1.5" PointX="10.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Disk" Width="1.5" PointX="13" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.DisksDiameter" Width="1.5" PointX="10.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.DisksWidth" Width="1.5" PointX="10.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Employee" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.LoadIndex" Width="1.5" PointX="7.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Manufacturer" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.NumberOfMountingHole" Width="1.5" PointX="10.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.OEM" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Oil" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.OilType" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.SpeedIndex" Width="1.5" PointX="7.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Tire" Width="1.5" PointX="10" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.TiresDiameter" Width="1.5" PointX="7.75" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.TiresHeight" Width="1.5" PointX="7.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.TiresRadiu" Width="1.5" PointX="7.75" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.TiresWidth" Width="1.5" PointX="7.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Viscosity" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Voltage" Width="1.5" PointX="5.75" PointY="17" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Accum__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Accum__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Accum__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Accum__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Batte__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Manuf__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Accumulat__Volta__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__ACEA_Id__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Admins__Employee__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__API_Id__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__Composition__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Customers__Emplo__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Disks__Departure__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Disks__DiameterO__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Disks__DisksDiam__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Disks__DisksWidt__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Disks__NumberOfM__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Tires__LoadIndex__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__Manufacture__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__OEM_Id__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__OilTypeId__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Oil__ViscosityId__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Tires__SpeedInde__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Tires__TiresDiam__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Tires__TiresHeig__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Tires__TiresRadi__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Tires__TiresWidt__6754599E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

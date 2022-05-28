@@ -1,0 +1,97 @@
+﻿<Window x:Class="marinin2.Views.AccumulatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:marinin2.Views"
+        xmlns:vm="clr-namespace:marinin2.ViewModels"
+        mc:Ignorable="d"
+        Title="AccumulatorWindow" 
+        Height="450"
+        Width="800">
+
+    <Window.DataContext>
+        <vm:AccumulatorWindowViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Orientation="Horizontal"
+            Margin="10"
+            Grid.Row="0">
+
+            <Button 
+                Width="100"
+                Height="80"
+                Margin="10"
+                Content="Back to manager"
+                Click="BackToManager_Click"/>
+
+            <Button 
+                Width="100"
+                Height="80"
+                Margin="10"
+                Content="Sign Out"
+                Click="BackToLogin_Click"/>
+
+            <Button 
+                Width="100"
+                Height="80"
+                Margin="10"
+                Content="Exit"
+                Click="Exit_Click"/>
+
+        </StackPanel>
+
+        <DataGrid
+            Grid.Row="1"
+            x:Name="AdminGrid"
+            AutoGenerateColumns="False"
+            ScrollViewer.CanContentScroll="True"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
+            ItemsSource="{Binding Accumulators, UpdateSourceTrigger=PropertyChanged}">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="Manufacturer"
+                    Binding="{Binding Path=AccumulatorManufacturer.Manufacturer}"/>
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="Voltage"
+                    Binding="{Binding Path=Voltage.Voltage1}"/>
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="BatteryCapacity"
+                    Binding="{Binding Path=BatteryCapacity.Capacity}"/>
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="AccumLength"
+                    Binding="{Binding Path=AccumulatorLength.Length}"/>
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="AccumWidth"
+                    Binding="{Binding Path=AccumulatorWidth.Width}"/>
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="AccumHeight"
+                    Binding="{Binding Path=AccumulatorHeight.Height}"/>
+                <DataGridTextColumn 
+                    Width="*"
+                    Header="AccumSeries"
+                    Binding="{Binding Path=AccumulatorSery.Series}"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>
